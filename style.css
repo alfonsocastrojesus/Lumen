@@ -1,6 +1,6 @@
 :root {
   --black: #0f0f0f;
-  --card: #161616;
+  --card: #0f0f0f;
   --ivory: #f7f3e8;
   --warm-gray: #cbbba5;
   --gold: #c9a54c; /* soft gold accent */
@@ -109,6 +109,7 @@ main {
   font-weight: 700;
   color: var(--ivory);
   margin-bottom: 0.25rem;
+  text-align: center;
 }
 
 .perfume-info p {
