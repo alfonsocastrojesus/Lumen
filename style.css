@@ -1,0 +1,171 @@
+:root {
+  --black: #0f0f0f;
+  --card: #161616;
+  --ivory: #f7f3e8;
+  --warm-gray: #cbbba5;
+  --gold: #c9a54c; /* soft gold accent */
+  --text: #f7f3e8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "arial";
+  background: var(--black);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 1.75rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: clamp(1.9rem, 2vw + 1rem, 2.7rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ivory);
+}
+
+main {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.Parfams.le.coche {
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* Card */
+.perfume-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--card);
+  border: 3px solid rgba(203, 187, 165, 0.25);
+  border-radius: 16px;
+  padding: 1.25rem;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.perfume-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(201, 165, 76, 0.6);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* Image */
+.perfume-image-placeholder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: min(60vw, 210px);
+  max-width: 240px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
+  transition: transform 160ms ease;
+}
+
+.perfume-card:hover .image {
+  transform: scale(1.02);
+}
+
+/* Details */
+.perfume-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.perfume-info h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ivory);
+  margin-bottom: 0.25rem;
+}
+
+.perfume-info p {
+  color: rgba(247, 243, 232, 0.9);
+  font-weight: 400;
+  margin-bottom: 0.45rem;
+}
+
+.perfume-notes p {
+  color: rgba(247, 243, 232, 0.78);
+  font-size: 1rem;
+}
+
+.perfume-price {
+  margin-top: 0.2rem;
+  align-self: flex-start;
+  background: rgba(201, 165, 76, 0.15);
+  color: var(--ivory);
+  font-weight: 700;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 165, 76, 0.55);
+}
+
+/* Responsive layout */
+@media (min-width: 640px) {
+  .Parfams.le.coche {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .perfume-card {
+    flex-direction: column;
+  }
+
+  .image {
+    width: min(38vw, 250px);
+    max-width: 260px;
+  }
+}
+
+@media (min-width: 900px) {
+  .perfume-card {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .perfume-image-placeholder {
+    flex: 0 0 220px;
+    justify-content: flex-start;
+  }
+
+  .perfume-details {
+    flex: 1;
+  }
+
+  .image {
+    width: min(22vw, 280px);
+    max-width: 280px;
+  }
+}
