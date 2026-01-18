@@ -1,6 +1,6 @@
 :root {
   --black: #0f0f0f;
-  --card: #0f0f0f;
+  --card: #000;
   --ivory: #f7f3e8;
   --warm-gray: #cbbba5;
   --gold: #c9a54c; /* soft gold accent */
@@ -89,8 +89,12 @@ main {
   max-width: 240px;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
-  transition: transform 160ms ease;
+  /* filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35)); */
+
+  /* transition: transform 160ms ease; */
+  background: var(--card);
+  border-radius: 12px;
+  /* Ensures transparent PNGs blend with card background */
 }
 
 .perfume-card:hover .image {
